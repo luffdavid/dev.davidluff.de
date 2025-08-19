@@ -14,7 +14,6 @@ import {
   Mail,
   Linkedin,
 } from 'lucide-react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
@@ -115,21 +114,6 @@ export default function HomePage() {
         </button>
       </div>
 
-      {/* header */}
-   {/*    <motion.div
-        className="z-1 mt-24 mb-8 flex flex-col items-center text-center md:mt-4 md:mb-12"
-        variants={topElementVariants}
-        initial="hidden"
-        animate="visible"
-      >
-
-        <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
-          👋Hey, Ich bin David
-        </h2>
-      
-      </motion.div>
- */}
-      {/* two-column section: left memoji, right input */}
       <div className="z-10 mt-4 w-full max-w-7xl px-2 md:px-4">
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:gap-16">
           {/* left: memoji + name + intro */}

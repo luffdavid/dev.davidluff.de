@@ -3,16 +3,15 @@ import { z } from 'zod';
 
 export const getJob = tool({
   description:
-    "Zusammenfassung, welche Art Praktikum ich suche – plus Kontaktinfos. Nutze dieses Tool, wenn nach meinem Praktikum oder Kontaktmöglichkeit gefragt wird.",
+    "Zusammenfassung, welche Art von Jobs ich suche – plus Kontaktinfos. Nutze dieses Tool, wenn nach meinem Job oder Kontaktmöglichkeit gefragt wird.",
   parameters: z.object({}),
   execute: async () => {
     return `Das suche ich 👇
 
-- 📅 **Dauer**: 6 Monate ab **September 2025**
-- 🌍 **Ort**: bevorzugt **San Francisco** oder generell **USA**
-- 🧑‍💻 **Fokus**: KI-Entwicklung, Full-Stack Webapps, SaaS, Agentic Workflows
-- 🛠️ **Stack**: Python, React/Next.js, Tailwind CSS, TypeScript, GPT, RAG usw.
-- ✅ **Was ich mitbringe**: Erfahrung mit sicheren On-Prem-GPTs (LightOn), Deep-Search, eigenen RAG-Tools sowie Hackathon-Siegen wie **ETH Oxford** & **Paris Blockchain Week**
+- 📅 **Start**: ab Februar 2026
+- 🌍 **Ort**: bevorzugt **München** oder auch remote
+- 🧑‍💻 **Fokus**: Full-Stack Webentwicklung, SaaS, KI-Agents
+- 🛠️ **Stack**: Java, JavaScript, TypeScript, HTML, CSS, React/Next.js, Quarkus, Spring Boot und vieles mehr
 - 🔥 Schnell in der Umsetzung, noch schneller im Lernen, extrem hungrig auf große Herausforderungen
 
 📬 **Kontakt**:

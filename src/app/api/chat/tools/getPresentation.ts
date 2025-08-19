@@ -8,7 +8,7 @@ export const getPresentation = tool({
   execute: async () => {
     return {
       presentation:
-        'Ich bin David Luff, 22 Jahre alt und lebe in München. Aktuell mache ich ein duales Studium bei MediaMarktSaturn. Ich liebe KI, Tech, Entrepreneurship und schlanke SaaS-Produkte.',
+        'Ich bin David Luff, 22 Jahre alt und lebe in München. Aktuell mache ich ein duales Studium bei MediaMarktSaturn. Ich liebe Softwareentwicklung, KI, Tech und funktionierende Produkte mit Mehrwert'
     };
   },
 });
