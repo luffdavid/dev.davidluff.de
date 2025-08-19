@@ -15,7 +15,7 @@ import {
   ChatBubble,
   ChatBubbleMessage,
 } from '@/components/ui/chat/chat-bubble';
-import { Info } from 'lucide-react';
+import { Info, ArrowLeft } from 'lucide-react';
 import { GithubButton } from '../ui/github-button';
 import HelperBoost from './HelperBoost';
 
@@ -128,10 +128,8 @@ const Chat = () => {
     messages,
     input,
     handleInputChange,
-    handleSubmit,
     isLoading,
     stop,
-    setMessages,
     setInput,
     reload,
     addToolResult,
@@ -294,6 +292,9 @@ const Chat = () => {
             'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)',
         }}
       >
+        <a href="/" className="absolute left-4 top-6 flex items-center text-gray-600 hover:text-black">
+          <ArrowLeft />
+        </a>
         <div
           className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
         >

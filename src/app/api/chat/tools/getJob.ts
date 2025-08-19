@@ -1,7 +1,7 @@
 import { tool } from 'ai';
 import { z } from 'zod';
 
-export const getInternship = tool({
+export const getJob = tool({
   description:
     "Zusammenfassung, welche Art Praktikum ich suche – plus Kontaktinfos. Nutze dieses Tool, wenn nach meinem Praktikum oder Kontaktmöglichkeit gefragt wird.",
   parameters: z.object({}),

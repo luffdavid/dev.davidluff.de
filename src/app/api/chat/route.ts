@@ -2,7 +2,7 @@ import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 import { SYSTEM_PROMPT } from './prompt';
 import { getContact } from './tools/getContact';
-import { getInternship } from './tools/getIntership';
+import { getJob } from './tools/getJob';
 import { getPresentation } from './tools/getPresentation';
 import { getProjects } from './tools/getProjects';
 import { getResume } from './tools/getResume';
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
       getContact,
       getSkills,
       getSports,
-      getInternship,
+      getJob,
     };
 
     const result = streamText({

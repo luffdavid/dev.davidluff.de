@@ -34,91 +34,77 @@ interface HelperBoostProps {
 }
 
 const questions = {
-  Me: 'Who are you? I want to know more about you.',
-  Projects: 'What are your projects? What are you working on right now?',
-  Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: "What the craziest thing you've ever done? (mb?) What are your hobbies? ",
-  Contact:
-    'How can I reach you? What kind of project would make you say "yes" immediately?',
-};
+  Übermich: 'Wer bist Du? Ich will mehr über Dich als Person erfahren',
+  Projekte: 'Bei welchen Projekten hast Du mitgewirkt? Woran arbeitest Du gerade?',
+  Skills: 'Welche Skills hast Du? Gib mir eine Liste über deine technischen Skills.',
+  Kontakt: 'Wie kann ich Dich kontaktieren?',
+} as const;
 
 const questionConfig = [
-  { key: 'Me', color: '#329696', icon: Laugh },
-  { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
+  { key: 'Übermich', color: '#329696', icon: Laugh },
+  { key: 'Projekte', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
-  { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
-];
+  { key: 'Kontakt', color: '#C19433', icon: UserRoundSearch },
+] as const;
 
 // Helper drawer data
 const specialQuestions = [
-  'Mountain Bike you said?? Show me!',
-  'Who are you?',
-  'Can I see your resume?',
-  'What projects are you most proud of?',
-  'What are your skills?',
-  'How can I reach you?',
-  "What's the craziest thing you've ever done?",
+  'Hab ich da Fußball gehört?? Zeig mir mehr davon!',
+  'Wer bist du?',
+  'Kann ich deinen Lebenslauf sehen?',
+  'Auf welche Projekte bist Du besonders stolz?',
+  'Was sind deine Skills?',
+  'Wie kann ich Dich erreichen?',
 ];
 
 const questionsByCategory = [
   {
     id: 'me',
-    name: 'Me',
+    name: 'Über mich',
     icon: UserSearch,
     questions: [
-      'Who are you?',
-      'What are your passions?',
-      'How did you get started in tech?',
-      'Where do you see yourself in 5 years?',
+      'Wer bist du?',
+      'Was sind deine Leidenschaften?',
+      'Wie bist du in die Tech-Welt eingestiegen?',
+      'Wo siehst du dich in 5 Jahren?',
     ],
   },
   {
     id: 'professional',
-    name: 'Professional',
+    name: 'Beruflich',
     icon: BriefcaseIcon,
     questions: [
-      'Can I see your resume?',
-      'What makes you a valuable team member?',
-      'Where are you working now?',
-      'Why should I hire you?',
-      "What's your educational background?",
+      'Kann ich deinen Lebenslauf sehen?',
+      'Was macht dich zu einem wertvollen Teammitglied?',
+      'Wo arbeitest du gerade?',
+      'Warum sollte ich dich einstellen?',
+      'Was ist dein Bildungshintergrund?',
     ],
   },
   {
     id: 'projects',
-    name: 'Projects',
+    name: 'Projekte',
     icon: CodeIcon,
-    questions: ['What projects are you most proud of?'],
+    questions: ['Auf welche Projekte bist du besonders stolz?'],
   },
   {
     id: 'skills',
-    name: 'Skills',
+    name: 'Fähigkeiten',
     icon: GraduationCapIcon,
     questions: [
-      'What are your skills?',
-      'How was your experience at École 42?',
+      'Was sind deine Fähigkeiten?',
+      'Wie war deine Erfahrung an der École 42?',
     ],
   },
-  {
-    id: 'fun',
-    name: 'Fun',
-    icon: PartyPopper,
-    questions: [
-      'Mountain Bike you said?? Show me!',
-      "What's the craziest thing you've ever done?",
-      'Mac or PC?',
-      'What are you certain about that 90% get wrong?',
-    ],
-  },
+
   {
     id: 'contact',
-    name: 'Contact & Future',
+    name: 'Kontakt & Zukunft',
     icon: MailIcon,
     questions: [
-      'How can I reach you?',
-      "What kind of project would make you say 'yes' immediately?",
-      'Where are you located?',
+      'Wie kann ich dich erreichen?',
+      'Bei welchem Projekt würdest du sofort „Ja“ sagen?',
+      'Wo befindest du dich?',
     ],
   },
 ];
@@ -186,12 +172,12 @@ export default function HelperBoost({
               {isVisible ? (
                 <>
                   <ChevronDown size={14} />
-                  Hide quick questions
+                  Vorgeschlagene Fragen ausblenden
                 </>
               ) : (
                 <>
                   <ChevronUp size={14} />
-                  Show quick questions
+                   Vorgeschlagene Fragen zeigen
                 </>
               )}
             </button>

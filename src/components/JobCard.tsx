@@ -2,13 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { CalendarDays, Code2, Globe } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 
-const InternshipCard = () => {
+
+const JobCard = () => {
   const openMail = () => {
-    window.open('mailto:raphaelgiraud12@gmail.com', '_blank');
+    window.open('mailto:kontakt@davidluff.de', '_blank');
   };
-  const router = useRouter();
 
   return (
     <motion.div
@@ -23,7 +22,7 @@ const InternshipCard = () => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/avatar-david.HEIC"
+              src="/david-rounded.png"
               alt="David's avatar"
               className="h-full w-full object-cover"
             />
@@ -55,16 +54,16 @@ const InternshipCard = () => {
         <div className="flex items-start gap-3">
           <CalendarDays className="mt-1 h-5 w-5 text-blue-500" />
           <div>
-            <p className="text-foreground text-sm font-medium">Duration</p>
+            <p className="text-foreground text-sm font-medium">Startzeitpunkt</p>
             <p className="text-muted-foreground text-sm">
-             Start: nach Vereinbarung (frühestens Februar)
+              nach Vereinbarung (Bachelorabschluss Februar 2026)
             </p>
           </div>
         </div>
         <div className="flex items-start gap-3">
           <Globe className="mt-1 h-5 w-5 text-green-500" />
           <div>
-            <p className="text-foreground text-sm font-medium">Location</p>
+            <p className="text-foreground text-sm font-medium">Ort</p>
             <p className="text-muted-foreground text-sm">
               Metropolregion München oder remote
             </p>
@@ -76,26 +75,11 @@ const InternshipCard = () => {
           <Code2 className="mt-1 h-5 w-5 text-purple-500" />
           <div className="w-full">
             <p className="text-foreground text-sm font-medium">Tech stack</p>
-            <div className="text-muted-foreground grid grid-cols-1 gap-y-1 text-sm sm:grid-cols-2">
+            <div className="text-muted-foreground text-sm w-full">
               <ul className="decoration-none list-disc pl-4">
-                <li>Python, Next.js, TypeScript, Tailwind CSS</li>
-                <li>Vercel AI SDK, Supabase, Prisma</li>
-                <li>OpenAI, Mistral, Claude, Whisper</li>
-                <li>Prompt engineering, fine-tuning</li>
-              </ul>
-              <ul className="list-disc pl-4">
-                <li>Weaviate, Pinecone, vector DBs</li>
-                <li>Hugging Face Transformers</li>
-                <li>Tool routing, calling, RAG</li>
-                <li>Hackathons + AI agent workflows</li>
-                <li>
-                  <a
-                    href="/chat?query=What%20are%20your%20skills%3F%20Give%20me%20a%20list%20of%20your%20soft%20and%20hard%20skills."
-                    className="cursor-pointer items-center text-blue-500 underline"
-                  >
-                    See more
-                  </a>
-                </li>
+                <li><b>Frontend-Entwicklung: </b>HTML, CSS,JavaScript,TypeScript, React, Next.js</li>
+                <li><b>Backend-Entwicklung: </b> Java, Quarkus, Spring Boot, Node.js, TypeScript</li>
+                <li><b>DevOps & Tools: </b>Docker, Git, GitHub, Datenbanken, AI Agents, und vieles mehr</li>
               </ul>
             </div>
           </div>
@@ -105,13 +89,15 @@ const InternshipCard = () => {
       {/* What I bring */}
       <div className="mt-10">
         <p className="text-foreground mb-2 text-lg font-semibold">
-          What I bring
+          Was ich mitbringe
         </p>
         <p className="text-foreground text-sm">
-          Real-world AI dev experience from Lighton (MCP, secure GPTs, RAG
-          pipelines). <br /> 3x hackathon wins (ETH Oxford, Paris Blockchain
-          Week, Colosseum Breakout on Solana). <br /> I ship fast, and love
-          building useful things that actually work.
+          Über drei Jahre Erfahrung bei MediaMarktSaturn, einem modernen Tech-Unternehmen,
+          in dem ich vielfältige Bereiche kennenlernen konnte – vom Webshop-Frontend über APIs
+          und Datenbanken bis hin zur Prozessoptimierung mit KI. <br />
+          An der Universität habe ich zudem zahlreiche Projekte umgesetzt, bei denen stets die
+          Verbindung von IT und wirtschaftlichem Mehrwert im Mittelpunkt stand. <br />
+          Meine Leidenschaft ist es, Lösungen zu entwickeln, die gebraucht werden und zuverlässig funktionieren.
         </p>
       </div>
 
@@ -119,9 +105,9 @@ const InternshipCard = () => {
       <div className="mt-8">
         <p className="text-foreground mb-2 text-lg font-semibold">Goal</p>
         <p className="text-foreground text-sm">
-          Join a bold, innovative team building AI-powered tools that matter. I
-          want to improve fast, contribute hard, and leave a mark. I’m fast,
-          flexible, and HUNGRYYYYY 🔥
+          Ich möchte Teil eines innovativen Teams sein, das Produkte entwickelt, die wirklich einen Unterschied machen.
+          Mein Ziel ist es, schnell zu lernen, mit voller Energie beizutragen und bleibenden Eindruck zu hinterlassen.
+          Ich bin schnell, anpassungsfähig und lerne auch gerne neue Dinge. Ihr benutzt einen anderen Tech-Stack? Kein Problem, ich lerne auch was neues :)
         </p>
       </div>
 
@@ -131,11 +117,11 @@ const InternshipCard = () => {
           onClick={openMail}
           className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
         >
-          Contact me
+          Kontaktiere mich!
         </button>
       </div>
     </motion.div>
   );
 };
 
-export default InternshipCard;
+export default JobCard;

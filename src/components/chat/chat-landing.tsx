@@ -13,19 +13,19 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
   const suggestedQuestions = [
     {
       icon: <MessageSquare className="h-4 w-4" />,
-      text: 'Who are you?',
+      text: 'Wer bist Du?',
     },
     {
       icon: <Code className="h-4 w-4" />,
-      text: 'What projects have you worked on?',
+      text: 'An welchen Projekten hast du bereits gearbeitet?',
     },
     {
       icon: <Award className="h-4 w-4" />,
-      text: 'What are your skills?',
+      text: 'Was sind deine Skills?',
     },
     {
       icon: <Mail className="h-4 w-4" />,
-      text: 'How can I contact you?',
+      text: 'Wie kann ich Dich kontaktieren?',
     },
   ];
 
@@ -62,11 +62,8 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
       {/* Welcome message */}
       <motion.div className="mb-8 text-center" variants={itemVariants}>
         <h2 className="mb-3 text-2xl font-semibold">
-            I'm Raphael's digital twin
+            Ich bin David's "Digital Twin"
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-md">
-          The first portfolio that fit YOU needs.
-        </p>
       </motion.div>
 
       {/* Suggested questions */}
