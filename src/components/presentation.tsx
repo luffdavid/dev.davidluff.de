@@ -7,15 +7,15 @@ import React from 'react';
 export function Presentation() {
   // Personal information
   const profile = {
-    name: 'Raphael Giraud',
-    age: '21 years old',
-    location: 'Paris, France',
+    name: 'David Luff',
+    age: '22 Jahre alt',
+    location: 'München, Deutschland',
     // Add a newline character after the emoji
     description:
-      "Hey 👋\nI'm Raph also known as Toukoum. I'm a developer specializing in AI at 42 Paris. I'm working at LightOn AI in Paris. I'm passionate about AI, tech, Entrepreneurship and SaaS tech.",
-    src: '/profil-raph.png',
+      "Hey 👋\nIch bin David. Ich bin Softwareentwickler und erreiche meinen Bachelorabschluss im Studiengang Wirtschaftsinformatik im Februar 2025. Aktuell arbeite ich bei MediaMarktSaturn als dualer Student.",
+    src: '/profil-david.jpeg',
     fallbackSrc:
-      'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
+      '',
   };
 
   // Animation variants for text elements

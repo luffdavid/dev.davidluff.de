@@ -9,7 +9,7 @@ const PROJECT_CONTENT = [
   {
     title: 'Synto',
     description:
-      'Synto is an AI-powered interface that transforms complex blockchain interactions into simple, natural language commands. Whether you want to send tokens, stake assets, swap coins, or even create NFTs or liquidity pools, just tell Synto what to do — no manual wallet interactions, no technical jargon. One of my biggest projects yet',
+      'Synto ist eine KI-gestützte Oberfläche, die komplexe Blockchain-Interaktionen in einfache, natürliche Sprache umwandelt. Ob Tokens senden, Assets staken, Coins tauschen oder sogar NFTs bzw. Liquidity Pools erstellen – sag Synto einfach, was es tun soll. Keine manuellen Wallet-Interaktionen, kein Jargon. Eines meiner größten Projekte.',
     techStack: [
       'Next.js',
       'TailwindCSS',
@@ -80,7 +80,7 @@ const PROJECT_CONTENT = [
   {
     title: 'Rrate',
     description:
-      "Rrate is a fun website to allow user to compare his salary with the richest people in the world. Try it now it's online!",
+      'Rrate ist eine spielerische Website, auf der Du Dein Gehalt mit den reichsten Menschen der Welt vergleichen kannst. Probier’s aus – sie ist online!',
     techStack: ['Html', 'Css', 'Javascript'],
     date: '2024',
     links: [
@@ -111,7 +111,7 @@ const PROJECT_CONTENT = [
   {
     title: 'Defai',
     description:
-      "We Win ETHOXford hackathon by building DEFAI. DEFAI stands for Decentralized Finance Artificial Intelligence. It's an AI-powered chat interface that simplifies on-chain operations on the Avalanche blockchain by allowing users to interact using natural language. This makes complex DeFi operations accessible even for those with limited technical expertise.",
+      'Wir haben den ETH Oxford Hackathon mit DEFAI gewonnen. DEFAI steht für Decentralized Finance Artificial Intelligence. Es ist eine KI-gestützte Chat-Oberfläche, die On-Chain-Operationen auf Avalanche durch natürliche Sprache vereinfacht – selbst für Nutzer ohne tiefes technisches Wissen.',
     techStack: [
       'Next.js',
       'TailwindCSS',
@@ -160,7 +160,7 @@ const PROJECT_CONTENT = [
   {
     title: 'Fitgear',
     description:
-      'Won the Gotta Go Hack IA by building Fitgear, a virtual voice seller accessible by QR code to improve the ratio between customers and sellers. Created an AI pipeline with API calls and a RAG system for natural language interactions.',
+      'Gewinner beim Gotta Go Hack IA mit Fitgear: einem virtuellen Voice-Verkäufer per QR-Code, um die Relation zwischen Kunden und Verkäufern zu verbessern. Implementiert wurde eine KI-Pipeline mit API-Calls und einem RAG-System für natürliche Sprachinteraktionen.',
     techStack: ['Next.js', 'TailwindCSS', 'OpenAI API', 'Langchain'],
     date: '2024',
     links: [
@@ -183,7 +183,7 @@ const PROJECT_CONTENT = [
   {
     title: 'Datai',
     description:
-      "DATAI is an AI-powered agent that lets non-technical users query a database using natural language without writing SQL. Built using Next.js, TailwindCSS, shadcn-ui, and Anthropic's Claude API, this project focuses on simplicity, speed, and user-friendly design.",
+      'DATAI ist ein KI-Agent, der es Nicht-Technikern ermöglicht, Datenbanken in natürlicher Sprache abzufragen – ganz ohne SQL. Gebaut mit Next.js, TailwindCSS, shadcn-ui und der Claude API von Anthropic. Fokus: Einfachheit, Geschwindigkeit und UX.',
     techStack: [
       'Next.js',
       'TailwindCSS',
@@ -222,9 +222,9 @@ const PROJECT_CONTENT = [
     ],
   },
   {
-    title: '3d Pong Game',
+    title: '3D Pong Game',
     description:
-      "Transcendance is the final project of my 42 cursus. It's a 3D pong game with multiplayer capabilities, user authentication, and real-time gameplay. We had to do everything from scratch, so it was pretty challenging and we learned a lot.",
+      'Transcendance ist das Abschlussprojekt meines 42-Studiengangs: ein 3D-Pong-Spiel mit Multiplayer, Authentifizierung und Echtzeit-Gameplay. Alles von Grund auf – extrem lehrreich und herausfordernd.',
     techStack: ['Django', 'Python', 'JavaScript', 'Websockets', 'PostgreSQL', 'Docker', 'Nginx', 'Web3', 'Solidity'],
     date: '2023',
     links: [
@@ -264,7 +264,7 @@ const PROJECT_CONTENT = [
   {
     title: 'Minishell',
     description:
-      "Minishell is a project that aims to create a simple shell. It's a great introduction to process creation and management in C, offering fundamental Unix command-line functionality. This was a very challenging project, but I learned a lot from it.",
+      'Minishell ist ein Projekt zur Erstellung einer einfachen Shell. Ein super Einstieg in Prozess-Erzeugung und -Verwaltung in C mit grundlegender Unix-Kommandofunktionalität. Anspruchsvoll – und sehr lehrreich.',
     techStack: ['C', 'Unix', 'Bash'],
     date: '2023',
     links: [
@@ -283,7 +283,7 @@ const PROJECT_CONTENT = [
   {
     title: 'YouBot',
     description:
-      'YouBot is a Python Bot that Scrapes Videos from Pexels, adds a random song from a Songs Folder, then auto-uploads the videos to your YouTube Channel for continuous content generation.',
+      'YouBot ist ein Python-Bot, der Videos von Pexels scraped, zufällige Songs aus einem Ordner hinzufügt und die Videos automatisch auf YouTube hochlädt – für kontinuierliche Content-Erstellung.',
     techStack: ['Python', 'YouTube API', 'Pexels API'],
     date: '2022',
     links: [
@@ -308,9 +308,9 @@ const PROJECT_CONTENT = [
     ],
   },
   {
-    title: 'Old Portfolio',
+    title: 'Altes Portfolio',
     description:
-      'My previous traditional portfolio built with vanilla HTML, CSS and JS with GSAP animations for a smooth and interactive user experience.',
+      'Mein früheres, klassisches Portfolio mit Vanilla HTML, CSS und JS – veredelt durch GSAP-Animationen für ein smoothes, interaktives Erlebnis.',
     techStack: ['HTML', 'CSS', 'JavaScript', 'GSAP'],
     date: '2022',
     links: [
@@ -351,7 +351,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
   const projectData = PROJECT_CONTENT.find((p) => p.title === project.title);
 
   if (!projectData) {
-    return <div>Project details not available</div>;
+    return <div>Projektdetails nicht verfügbar</div>;
   }
 
   return (
@@ -370,7 +370,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
           {/* Tech stack */}
           <div className="pt-4">
             <h3 className="mb-3 text-sm tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
-              Technologies
+              Technologien
             </h3>
             <div className="flex flex-wrap gap-2">
               {projectData.techStack.map((tech, index) => (

@@ -7,33 +7,21 @@ import { ChevronRight } from 'lucide-react';
 export function Contact() {
   // Contact information
   const contactInfo = {
-    name: 'Raphael Giraud',
-    email: 'raphaelgiraud12@gmail.com',
-    handle: '@Raphael.Giraud',
+    name: 'David Luff',
+    email: 'kontakt@davidluff.de.',
+    handle: '@David.Luff',
     socials: [
       {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/raphael-giraud-60939519a/',
-      },
-      {
-        name: 'Youtube',
-        url: 'https://www.youtube.com/@toukoum',
+        url: 'https://www.linkedin.com/in/david-luff-228985223/',
       },
       {
         name: 'Instagram',
-        url: 'https://www.instagram.com/raphael.giraud/',
-      },
-      {
-        name: 'Discord',
-        url: 'https://discord.com/users/toukoum',
+        url: 'https://www.instagram.com/daavid.luff',
       },
       {
         name: 'Github',
-        url: 'https://github.com/toukoum',
-      },
-      {
-        name: 'X',
-        url: 'https://x.com/toukoumcode',
+        url: 'https://github.com/luffdavid',
       },
     ],
   };
@@ -49,7 +37,7 @@ export function Contact() {
         {/* Header Section */}
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
-            Contacts
+            Kontakt
           </h2>
           <span className="mt-2 sm:mt-0">
             {contactInfo.handle}

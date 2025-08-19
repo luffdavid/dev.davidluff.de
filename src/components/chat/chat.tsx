@@ -15,7 +15,6 @@ import {
   ChatBubble,
   ChatBubbleMessage,
 } from '@/components/ui/chat/chat-bubble';
-import WelcomeModal from '@/components/welcome-modal';
 import { Info } from 'lucide-react';
 import { GithubButton } from '../ui/github-button';
 import HelperBoost from './HelperBoost';
@@ -277,13 +276,6 @@ const Chat = () => {
   return (
     <div className="relative h-screen overflow-hidden">
       <div className="absolute top-6 right-8 z-51 flex flex-col-reverse items-center justify-center gap-1 md:flex-row">
-        <WelcomeModal
-          trigger={
-            <div className="hover:bg-accent cursor-pointer rounded-2xl px-3 py-1.5">
-              <Info className="text-accent-foreground h-8" />
-            </div>
-          }
-        />
         <div className="">
           <GithubButton
             animationDuration={1.5}

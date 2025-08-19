@@ -8,43 +8,30 @@ import { Code, Cpu, PenTool, Users } from 'lucide-react';
 const Skills = () => {
   const skillsData = [
     {
-      category: 'Frontend Development',
+      category: 'Frontend-Entwicklung',
       icon: <Code className="h-5 w-5" />,
       skills: [
         'HTML',
         'CSS',
         'JavaScript/TypeScript',
         'Tailwind CSS',
-        'Bootstrap',
         'Next.js',
         'React',
-        'Vercel AI SDK',
-        'Gsap',
       ],
       color: 'bg-blue-50 text-blue-600 border border-blue-200',
     },
     {
-      category: 'Backend & Systems',
+      category: 'Backend & Systeme',
       icon: <Cpu className="h-5 w-5" />,
       skills: [
-        'Unix',
-        'C',
-        'C++',
-        'Python',
+        'Java',
         'Typescript',
         'Git',
         'GitHub',
         'Docker',
         'GCP',
-        'PostgreSQL',
       ],
       color: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
-    },
-    {
-      category: 'Design & Creative Tools',
-      icon: <PenTool className="h-5 w-5" />,
-      skills: ['Figma', 'Davinci Code', 'Illustrator', 'Canva', 'Keynote'],
-      color: 'bg-indigo-50 text-indigo-600 border border-indigo-200',
     },
     {
       category: 'Soft Skills',
@@ -61,20 +48,14 @@ const Skills = () => {
       color: 'bg-amber-50 text-amber-600 border border-amber-200',
     },
     {
-      category: 'AI & Fullstack Engineering',
+      category: 'KI & Fullstack Engineering',
       icon: <Cpu className="h-5 w-5" />,
       skills: [
         'LLM Providers (ChatGPT, Whisper, Groq, Mistral & Claude)',
         'AI Agents',
         'Prompt engineering',
-        'Vector databases (Weaviate, Pinecone)',
         'RAG (Retrieval-Augmented Generation)',
         'Tool routing & calling',
-        'Hugging Face Transformers',
-        'Vercel AI SDK',
-        'Supabase',
-        'Prisma',
-        'Next.js',
       ],
       color: 'bg-purple-50 text-purple-600 border border-purple-200',
     },
@@ -119,7 +100,7 @@ const Skills = () => {
       <Card className="w-full border-none px-0 pb-12 shadow-none">
         <CardHeader className="px-0 pb-1">
           <CardTitle className="text-primary px-0 text-4xl font-bold">
-            Skills & Expertise
+            Fähigkeiten & Expertise
           </CardTitle>
         </CardHeader>
 

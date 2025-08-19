@@ -3,9 +3,9 @@ import { z } from 'zod';
 
 export const getSkills = tool({
   description:
-    'This tool show a list of my skills.',
+    'Dieses Tool zeigt eine Liste meiner Fähigkeiten.',
   parameters: z.object({}),
   execute: async () => {
-    return "You can see all my skills above.";
+    return "Du findest alle meine Fähigkeiten oben.";
   },
 });

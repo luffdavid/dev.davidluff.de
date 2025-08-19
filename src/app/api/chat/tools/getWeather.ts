@@ -4,12 +4,12 @@ import { z } from "zod";
 
 export const getWeather = tool({
   description:
-    "show the weather in a given city to the user",
+    "Zeigt dem Nutzer das Wetter in einer angegebenen Stadt",
   parameters: z.object({
-    city: z.string().describe("The city to get weather for"),
+    city: z.string().describe("Die Stadt, für die das Wetter angezeigt werden soll"),
   }),
   execute: async ({ city }: { city: string }) => {
-    const weatherOptions = ['sunny', 'cloudy', 'rainy', 'snowy', 'windy'];
+    const weatherOptions = ['sonnig', 'bewölkt', 'regnerisch', 'schneit', 'windig'];
     // fake wait for weather data
     await new Promise((resolve) => setTimeout(resolve, 3000));
     return weatherOptions[

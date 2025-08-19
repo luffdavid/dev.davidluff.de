@@ -3,25 +3,24 @@ import { z } from 'zod';
 
 export const getInternship = tool({
   description:
-    "Gives a summary of what kind of internship I'm looking for, plus my contact info and how to reach me. Use this tool when the user asks about my internship search or how to contact me for opportunities.",
+    "Zusammenfassung, welche Art Praktikum ich suche – plus Kontaktinfos. Nutze dieses Tool, wenn nach meinem Praktikum oder Kontaktmöglichkeit gefragt wird.",
   parameters: z.object({}),
   execute: async () => {
-    return `Here’s what I’m looking for 👇
+    return `Das suche ich 👇
 
-- 📅 **Duration**: 6-month internship starting **September 2025**
-- 🌍 **Location**: Preferably **San Francisco** or anywhere in the **United States**
-- 🧑‍💻 **Focus**: AI development, full-stack web apps, SaaS, agentic workflows
-- 🛠️ **Stack**: Python, React/Next.js, Tailwind CSS, TypeScript, GPT, RAG, etc.
-- 💼 **Visa**: I’m based in Paris 🇫🇷 so I might need **J-1 sponsorship**
-- ✅ **What I bring**: Real experience with secure on-prem GPTs (Lighton), deepsearch engines, custom RAG tools, and hackathon wins like **ETH Oxford** & **Paris Blockchain Week**
-- 🔥 I move fast, learn faster, and I’m HUNGRYYYYY for big challenges
+- 📅 **Dauer**: 6 Monate ab **September 2025**
+- 🌍 **Ort**: bevorzugt **San Francisco** oder generell **USA**
+- 🧑‍💻 **Fokus**: KI-Entwicklung, Full-Stack Webapps, SaaS, Agentic Workflows
+- 🛠️ **Stack**: Python, React/Next.js, Tailwind CSS, TypeScript, GPT, RAG usw.
+- ✅ **Was ich mitbringe**: Erfahrung mit sicheren On-Prem-GPTs (LightOn), Deep-Search, eigenen RAG-Tools sowie Hackathon-Siegen wie **ETH Oxford** & **Paris Blockchain Week**
+- 🔥 Schnell in der Umsetzung, noch schneller im Lernen, extrem hungrig auf große Herausforderungen
 
-📬 **Contact me** via:
-- Email: raphaelgiraud12@gmail.com
-- LinkedIn: [linkedin.com/in/raphael-giraud](https://www.linkedin.com/in/raphael-giraud-ai/)
-- GitHub: [github.com/raphaelgiraud](https://github.com/toukoum)
+📬 **Kontakt**:
+- E-Mail: kontakt@davidluff.de
+- LinkedIn: https://www.linkedin.com/in/david-luff-228985223/
+- GitHub: https://github.com/luffdavid
 
-Let's build cool shit together ✌️
+Lass uns zusammen etwas Starkes bauen ✌️
     `;
   },
 });

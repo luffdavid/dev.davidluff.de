@@ -5,9 +5,9 @@ import { z } from "zod";
 
 export const getSports = tool({
   description:
-    "This tool will show some photos of Raphael doing sports",
+    "Dieses Tool zeigt einige Fotos von David beim Sport.",
   parameters: z.object({}),
   execute: async () => {
-    return "Here my best pictures of me doing sports!";
+    return "Hier sind meine besten Sport-Bilder!";
   },
 });

@@ -3,15 +3,16 @@
 import FluidCursor from '@/components/FluidCursor';
 import { Button } from '@/components/ui/button';
 import { GithubButton } from '@/components/ui/github-button';
-import WelcomeModal from '@/components/welcome-modal';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
   BriefcaseBusiness,
   Laugh,
   Layers,
-  PartyPopper,
   UserRoundSearch,
+  Github,
+  Mail,
+  Linkedin,
 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -19,23 +20,21 @@ import { useEffect, useRef, useState } from 'react';
 
 /* ---------- quick-question data ---------- */
 const questions = {
-  Me: 'Who are you? I want to know more about you.',
-  Projects: 'What are your projects? What are you working on right now?',
-  Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
-  Contact: 'How can I contact you?',
+  Übermich: 'Wer bist Du? Ich will mehr über Dich als Person erfahren',
+  Projekte: 'Bei welchen Projekten hast Du mitgewirkt? Woran arbeitest Du gerade?',
+  Skills: 'Welche Skills hast Du? Gib mir eine Liste über deine technischen Skills.',
+  Kontakt: 'Wie kann ich Dich kontaktieren?',
 } as const;
 
 const questionConfig = [
-  { key: 'Me', color: '#329696', icon: Laugh },
-  { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
+  { key: 'Übermich', color: '#329696', icon: Laugh },
+  { key: 'Projekte', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
-  { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
+  { key: 'Kontakt', color: '#C19433', icon: UserRoundSearch },
 ] as const;
 
 /* ---------- component ---------- */
-export default function Home() {
+export default function HomePage() {
   const [input, setInput] = useState('');
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -62,13 +61,13 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Précharger les assets du chat en arrière-plan
+    // Assets für den Chat im Hintergrund vorladen
     const img = new window.Image();
     img.src = '/landing-memojis.png';
 
-    // Précharger les vidéos aussi
+    // Auch Videos vorladen
     const linkWebm = document.createElement('link');
-    linkWebm.rel = 'preload'; // Note: prefetch au lieu de preload
+    linkWebm.rel = 'prefetch';
     linkWebm.as = 'video';
     linkWebm.href = '/final_memojis.webm';
     document.head.appendChild(linkWebm);
@@ -88,24 +87,23 @@ export default function Home() {
           className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
           style={{ marginBottom: '-2.5rem' }}
         >
-          Toukoum
+          David Luff
         </div>
       </div>
 
       {/* GitHub button */}
       <div className="absolute top-6 right-8 z-20">
         <GithubButton
-          //targetStars={68}
           animationDuration={1.5}
-          label="Star"
+          label="Zu meinem Github-Profil"
           size={'sm'}
-          repoUrl="https://github.com/toukoum/portfolio"
+          repoUrl="https://github.com/luffdavid"
         />
       </div>
 
       <div className="absolute top-6 left-6 z-20">
         <button
-          onClick={() => goToChat('Are you looking for an internship?')}
+          onClick={() => goToChat('Suchen Sie nach einem Talent?')}
           className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
         >
           {/* Green pulse dot */}
@@ -113,94 +111,124 @@ export default function Home() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
           </span>
-          Looking for a talent?
+         Suchen Sie nach einem Talent?
         </button>
       </div>
 
       {/* header */}
-      <motion.div
+   {/*    <motion.div
         className="z-1 mt-24 mb-8 flex flex-col items-center text-center md:mt-4 md:mb-12"
         variants={topElementVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="z-100">
-          <WelcomeModal />
-        </div>
 
         <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
-          Hey, I'm Raphael 👋
+          👋Hey, Ich bin David
         </h2>
-        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-          AI Portfolio
-        </h1>
+      
       </motion.div>
+ */}
+      {/* two-column section: left memoji, right input */}
+      <div className="z-10 mt-4 w-full max-w-7xl px-2 md:px-4">
+        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:gap-16">
+          {/* left: memoji + name + intro */}
+          <div className="flex flex-col items-center justify-center gap-4 md:items-start">
+            <div className="flex flex-col items-center text-center">
+              <div className="relative h-56 w-52 sm:h-80 sm:w-80">
+                <img
+                  src="/david-rounded.png"
+                  alt="Hero Memojis"
+                  className="h-full w-full object-cover rounded-full"
+                />
+              </div>
+              <h2 className="mt-4 text-2xl font-semibold">David Luff</h2>
+              <div className="mt-2 flex gap-4 text-muted-foreground">
+                <a href="https://github.com/luffdavid" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5 hover:text-black dark:hover:text-white" />
+                </a>
+                <a href="mailto:kontakt@davidluff.de">
+                  <Mail className="h-5 w-5 hover:text-black dark:hover:text-white" />
+                </a>
+                <a href="https://www.linkedin.com/in/david-luff-228985223/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5 hover:text-black dark:hover:text-white" />
+                </a>
+              </div>
+              <p className="mt-2 max-w-sm text-sm text-muted-foreground">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+                feugiat, ligula non pulvinar interdum, sapien felis aliquam turpis,
+                at gravida ipsum urna at lectus.
+              </p>
+            </div>
+          </div>
 
-      {/* centre memoji */}
-      <div className="relative z-10 h-52 w-48 overflow-hidden sm:h-72 sm:w-72">
-        <Image
-          src="/landing-memojis.png"
-          alt="Hero memoji"
-          width={2000}
-          height={2000}
-          priority
-          className="translate-y-14 scale-[2] object-cover"
-        />
-      </div>
-
-      {/* input + quick buttons */}
-      <motion.div
-        variants={bottomElementVariants}
+          {/* right: input */}
+          <motion.div
+            variants={bottomElementVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex w-full flex-col items-center md:items-start md:px-0"
+          >
+            {/* heading above quick buttons */}
+            <motion.div
+        className="z-1 mt-24 mb-8 flex flex-col items-center text-center md:mt-4 md:mb-12"
+        variants={topElementVariants}
         initial="hidden"
         animate="visible"
-        className="z-10 mt-4 flex w-full flex-col items-center justify-center md:px-0"
       >
-        {/* free-form question */}
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (input.trim()) goToChat(input.trim());
-          }}
-          className="relative w-full max-w-lg"
-        >
-          <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask me anything…"
-              className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-500"
-            />
-            <button
-              type="submit"
-              disabled={!input.trim()}
-              aria-label="Submit question"
-              className="flex items-center justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
-            >
-              <ArrowRight  className="h-5 w-5" />
-            </button>
-          </div>
-        </form>
-
-        {/* quick-question grid */}
-        <div className="mt-4 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-5">
-          {questionConfig.map(({ key, color, icon: Icon }) => (
-            <Button
-              key={key}
-              onClick={() => goToChat(questions[key])}
-              variant="outline"
-              className="border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-2xl border bg-white/30 py-8 shadow-none backdrop-blur-lg active:scale-95 md:p-10"
-            >
-              <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
-                <Icon size={22} strokeWidth={2} color={color} />
-                <span className="text-xs font-medium sm:text-sm">{key}</span>
-              </div>
-            </Button>
-          ))}
-        </div>
+          <h1 className="text-3xl font-bold text-center text-primary mb-6">
+    👋 Willkommen – Ich bin David
+  </h1>
+      
       </motion.div>
-      <FluidCursor />
+            {/* quick buttons under the chat input */}
+            <div className="mt-4 mb-6 grid w-full max-w-3xl grid-cols-2 gap-3 md:grid-cols-4">
+              {questionConfig.map(({ key, color, icon: Icon }) => (
+                <Button
+                  key={key}
+                  onClick={() => goToChat(questions[key])}
+                  variant="outline"
+                  className="border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-2xl border bg-white/30 py-8 shadow-none backdrop-blur-lg active:scale-95 md:p-10"
+                >
+                  <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
+                    <Icon size={22} strokeWidth={2} color={color} />
+                    <span className="text-xs font-medium sm:text-sm">
+                      {key === 'Übermich' ? 'Über mich' : key}
+                    </span>
+                  </div>
+                </Button>
+              ))}
+            </div>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (input.trim()) goToChat(input.trim());
+              }}
+              className="relative w-full max-w-3xl"
+            >
+              <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Frag etwas über mich…"
+                  className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-500"
+                />
+                <button
+                  type="submit"
+                  disabled={!input.trim()}
+                  aria-label="Frage absenden"
+                  className="flex items-center justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+  {/*     <FluidCursor /> */}
     </div>
   );
 }
