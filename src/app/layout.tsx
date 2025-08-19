@@ -13,15 +13,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Toukoum Portfolio",
-  description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
+  title: "David Luff -  Portfolio",
+  description: "Interactive portfolio with AI that answers questions about me",
   keywords: [
-    "Toukoum", 
+    "David Luff", 
     "Portfolio", 
     "Developer", 
     "AI", 
     "Interactive", 
-    "Memoji", 
     "Web Development",
     "Full Stack",
     "Next.js",
@@ -29,33 +28,33 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Toukoum",
-      url: "https://toukoum.fr",
+      name: "David Luff",
+      url: "https://dev.davidluff.de",
     },
   ],
-  creator: "Toukoum",
+  creator: "David Luff",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://toukoum.fr",
-    title: "Toukoum Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    siteName: "Toukoum Portfolio",
+    url: "https://dev.davidluff.de",
+    title: "David Luff - Portfolio",
+    description: "Interactive portfolio with AI that answers questions about me",
+    siteName: "David Luff - Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toukoum Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@toukoum",
+    title: "David Luff - Portfolio",
+    description: "Interactive portfolio with AI that answers questions about me",
+    creator: "@davidluff",
   },
   icons: {
     icon: [
       {
-        url: "/favicon.svg",
+        url: "/favicon.png",
         sizes: "any",
       }
     ],
-    shortcut: "/favicon.svg?v=2",
+    shortcut: "/favicon.svg",
     apple: "/apple-touch-icon.svg?v=2",
   },
 };
@@ -69,7 +68,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
       <body
         className={cn(
