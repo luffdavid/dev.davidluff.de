@@ -155,9 +155,8 @@ export default function HomePage() {
                 </a>
               </div>
               <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                feugiat, ligula non pulvinar interdum, sapien felis aliquam turpis,
-                at gravida ipsum urna at lectus.
+              Ich bin 22 Jahre alt und studiere aktuell Wirtschaftsinformatik (Abschluss Bachelor im Februar 2026)
+              und bin begeisteter Softwareentwickler.
               </p>
             </div>
           </div>
@@ -179,7 +178,11 @@ export default function HomePage() {
           <h1 className="text-3xl font-bold text-center text-primary mb-6">
     👋 Willkommen – Ich bin David
   </h1>
-      
+  <p className="mt-1 text-sm text-muted-foreground text-justify">
+    Auf meiner Webseite kannst du mit meinem digitalen AI-Twin alles über mich erfahren. 
+    Nutze die Buttons unten, um mehr über meine Projekte, Skills oder Kontaktmöglichkeiten zu erfahren – 
+    oder stelle direkt deine eigene Frage in der Chatbar.
+  </p>
       </motion.div>
             {/* quick buttons under the chat input */}
             <div className="mt-4 mb-6 grid w-full max-w-3xl grid-cols-2 gap-3 md:grid-cols-4">
