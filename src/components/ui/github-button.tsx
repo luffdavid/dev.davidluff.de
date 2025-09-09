@@ -4,12 +4,10 @@ import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Star } from 'lucide-react';
 import {
-  motion,
-  useInView,
   type SpringOptions,
   type UseInViewOptions,
 } from 'motion/react';
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 
 const githubButtonVariants = cva(
   'cursor-pointer relative overflow-hidden will-change-transform backface-visibility-hidden transform-gpu transition-transform duration-200 ease-out hover:scale-105 group whitespace-nowrap focus-visible:outline-hidden inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0',
@@ -76,95 +74,10 @@ function GithubButton({
   transition,
   ...props
 }: GithubButtonProps) {
-  const [targetStars, setTargetStars] = useState<number | null>(null);
-  const [currentStars, setCurrentStars] = useState(initialStars);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [starProgress, setStarProgress] = useState(filled ? 100 : 0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const formatNumber = (num: number) => {
-    const units = ['k', 'M', 'B', 'T'];
-    if (roundStars && num >= 1000) {
-      let unitIndex = -1;
-      let value = num;
-      while (value >= 1000 && unitIndex < units.length - 1) {
-        value /= 1000;
-        unitIndex++;
-      }
-      const formatted = value % 1 === 0 ? value.toString() : value.toFixed(1);
-      return `${formatted}${units[unitIndex]}`;
-    }
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
-  // Fetch stars from GitHub API
-  useEffect(() => {
-    fetch('/api/github-stars')
-      .then((res) => res.json())
-      .then((data) => setTargetStars(data.stars));
-  }, []);
-
-  const startAnimation = useCallback(() => {
-    if (isAnimating || hasAnimated || targetStars === null) return;
-
-    setIsAnimating(true);
-    const startTime = Date.now();
-    const startValue = 0;
-    const endValue = targetStars;
-    const duration = animationDuration * 1000;
-
-    const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const newStars = Math.round(
-        startValue + (endValue - startValue) * easeOutQuart
-      );
-      setCurrentStars(newStars);
-      setStarProgress(progress * 100);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setCurrentStars(endValue);
-        setStarProgress(100);
-        setIsAnimating(false);
-        setHasAnimated(true);
-      }
-    };
-
-    setTimeout(() => {
-      requestAnimationFrame(animate);
-    }, animationDelay * 1000);
-  }, [
-    isAnimating,
-    hasAnimated,
-    targetStars,
-    animationDuration,
-    animationDelay,
-  ]);
 
   const ref = React.useRef(null);
-  const isInView = useInView(ref, inViewOptions);
 
-  useEffect(() => {
-    if (targetStars === null) return;
-    if (useInViewTrigger) {
-      if (isInView && !hasAnimated) {
-        startAnimation();
-      }
-    } else if (autoAnimate && !hasAnimated) {
-      startAnimation();
-    }
-  }, [
-    autoAnimate,
-    useInViewTrigger,
-    isInView,
-    hasAnimated,
-    startAnimation,
-    targetStars,
-  ]);
-
+  
   const navigateToRepo = () => {
     if (!repoUrl) return;
     try {
@@ -191,8 +104,6 @@ function GithubButton({
     }
     if (repoUrl) {
       navigateToRepo();
-    } else if (!hasAnimated) {
-      startAnimation();
     }
   };
 
@@ -201,8 +112,6 @@ function GithubButton({
       event.preventDefault();
       if (repoUrl) {
         navigateToRepo();
-      } else if (!hasAnimated) {
-        startAnimation();
       }
     }
   };
@@ -225,7 +134,7 @@ function GithubButton({
       )}
 
       <span>{label}</span>
-
+Zu meinem Github-Profil
       <div className="relative inline-flex shrink-0">
         <Star
           className="fill-muted-foreground text-muted-foreground"
@@ -235,35 +144,7 @@ function GithubButton({
           className="absolute start-0 top-0 fill-yellow-400 text-yellow-400"
           size={18}
           aria-hidden="true"
-          style={{
-            clipPath: `inset(${100 - starProgress}% 0 0 0)`,
-          }}
         />
-      </div>
-
-      <div
-        className={cn(
-          'relative flex flex-col overflow-hidden font-semibold',
-          starsClass
-        )}
-      >
-        <motion.div
-          animate={{ opacity: 1 }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 30,
-            ...transition,
-          }}
-          className="tabular-nums"
-        >
-          <span>{currentStars > 0 && formatNumber(currentStars)}</span>
-        </motion.div>
-        {fixedWidth && (
-          <span className="h-0 overflow-hidden tabular-nums opacity-0">
-            {targetStars !== null ? formatNumber(targetStars) : ''}
-          </span>
-        )}
       </div>
     </button>
   );

@@ -36,12 +36,12 @@ interface HelperBoostProps {
 const questions = {
   Übermich: 'Wer bist Du? Ich will mehr über Dich als Person erfahren',
   Projekte: 'Bei welchen Projekten hast Du mitgewirkt? Woran arbeitest Du gerade?',
-  Skills: 'Welche Skills hast Du? Gib mir eine Liste über deine technischen Skills.',
+  Skills: 'Welche Skills hast Du? Gib mir eine Liste deiner technischen Skills.',
   Kontakt: 'Wie kann ich Dich kontaktieren?',
 } as const;
 
 const questionConfig = [
-  { key: 'Übermich', color: '#329696', icon: Laugh },
+  { key: 'Über mich', color: '#329696', icon: Laugh },
   { key: 'Projekte', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
   { key: 'Kontakt', color: '#C19433', icon: UserRoundSearch },
@@ -54,7 +54,7 @@ const specialQuestions = [
   'Kann ich deinen Lebenslauf sehen?',
   'Auf welche Projekte bist Du besonders stolz?',
   'Was sind deine Skills?',
-  'Wie kann ich Dich erreichen?',
+  'Wie kann ich Dich kontaktieren?',
 ];
 
 const questionsByCategory = [
@@ -85,15 +85,16 @@ const questionsByCategory = [
     id: 'projects',
     name: 'Projekte',
     icon: CodeIcon,
-    questions: ['Auf welche Projekte bist du besonders stolz?'],
+    questions: ['Auf welche Projekte bist du besonders stolz?',
+      'Hast du schon Projekte abgeschlossen?',
+    ],
   },
   {
     id: 'skills',
     name: 'Fähigkeiten',
     icon: GraduationCapIcon,
     questions: [
-      'Was sind deine Fähigkeiten?',
-      'Wie war deine Erfahrung an der École 42?',
+      'Was sind deine Skills?',
     ],
   },
 
@@ -102,9 +103,9 @@ const questionsByCategory = [
     name: 'Kontakt & Zukunft',
     icon: MailIcon,
     questions: [
-      'Wie kann ich dich erreichen?',
+      'Wie kann ich dich kontaktieren?',
       'Bei welchem Projekt würdest du sofort „Ja“ sagen?',
-      'Wo befindest du dich?',
+      'An welchem Ort bist du aktuell beschäftigt?',
     ],
   },
 ];

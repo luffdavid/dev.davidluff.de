@@ -35,8 +35,46 @@ const questionConfig = [
 /* ---------- component ---------- */
 export default function HomePage() {
   const [input, setInput] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const placeholders = [
+    "Frag irgendwas über mich…",
+    "Zeig mir deine wichtigsten beruflichen Stationen…",
+    "Wie kann ich Dich kontaktieren?",
+    "Was sind deine Skills?",
+  ];
+
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [displayedPlaceholder, setDisplayedPlaceholder] = useState("");
+
+  useEffect(() => {
+    let charIndex = 0;
+    let forward = true;
+
+    const interval = setInterval(() => {
+      const currentText = placeholders[placeholderIndex];
+
+      if (forward) {
+        setDisplayedPlaceholder(currentText.slice(0, charIndex + 1));
+        charIndex++;
+        if (charIndex === currentText.length) {
+          forward = false;
+          setTimeout(() => {}, 1500); // kurze Pause am Ende
+        }
+      } else {
+        setDisplayedPlaceholder(currentText.slice(0, charIndex - 1));
+        charIndex--;
+        if (charIndex === 0) {
+          forward = true;
+          setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+        }
+      }
+    }, 80);
+
+    return () => clearInterval(interval);
+  }, [placeholderIndex]);
 
   const goToChat = (query: string) =>
     router.push(`/chat?query=${encodeURIComponent(query)}`);
@@ -78,6 +116,15 @@ export default function HomePage() {
     document.head.appendChild(linkMp4);
   }, []);
 
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
       {/* big blurred footer word */}
@@ -90,29 +137,30 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* GitHub button */}
-      <div className="absolute top-6 right-8 z-20">
-        <GithubButton
-          animationDuration={1.5}
-          label="Zu meinem Github-Profil"
-          size={'sm'}
-          repoUrl="https://github.com/luffdavid"
-        />
-      </div>
-
-      <div className="absolute top-6 left-6 z-20">
-        <button
-          onClick={() => goToChat('Suchen Sie nach einem Talent?')}
-          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-        >
-          {/* Green pulse dot */}
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-          </span>
-         Suchen Sie nach einem Talent?
-        </button>
-      </div>
+      {/* Container für die beiden Buttons */}
+      {!isMobile && (
+        <div className="absolute top-6 left-0 right-0 z-20 flex justify-between px-4 sm:px-8">
+          {/* GitHub Button rechts */}
+          
+          <button
+  onClick={() => goToChat('Suchen Sie nach einem Talent?')}
+  className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition-transform duration-200 hover:bg-white/60 focus:scale-110 hover:scale-105 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+>
+  {/* Green pulse dot */}
+  <span className="relative flex h-2 w-2">
+    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+  </span>
+  Suchen Sie nach einem Talent?
+</button>
+          <GithubButton
+            animationDuration={1.5}
+            label=""
+            size={'sm'}
+            repoUrl="https://github.com/luffdavid"
+          />
+        </div>
+      )}
 
       <div className="z-10 mt-4 w-full max-w-7xl px-2 md:px-4">
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:gap-16">
@@ -193,24 +241,30 @@ export default function HomePage() {
               }}
               className="relative w-full max-w-3xl"
             >
-              <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Frag etwas über mich…"
-                  className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-500"
-                />
-                <button
-                  type="submit"
-                  disabled={!input.trim()}
-                  aria-label="Frage absenden"
-                  className="flex items-center justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
-                >
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </div>
+             <div className="relative mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
+  {/* Dynamischer Placeholder mit blinkendem Cursor */}
+  {input.length === 0 && (
+    <span className="pointer-events-none absolute left-6 text-base text-neutral-500 dark:text-neutral-500 cursor-blink">
+      {displayedPlaceholder}
+    </span>
+  )}
+
+  <input
+    ref={inputRef}
+    type="text"
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+    className="w-full border-none bg-transparent text-base text-neutral-800 focus:outline-none dark:text-neutral-200"
+  />
+  <button
+    type="submit"
+    disabled={!input.trim()}
+    aria-label="Frage absenden"
+    className="flex items-center justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
+  >
+    <ArrowRight className="h-5 w-5" />
+  </button>
+</div>
             </form>
           </motion.div>
         </div>

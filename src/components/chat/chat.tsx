@@ -277,7 +277,7 @@ const Chat = () => {
         <div className="">
           <GithubButton
             animationDuration={1.5}
-            label="Star"
+            label=""
             size={'sm'}
             repoUrl="https://github.com/luffdavid"
           />

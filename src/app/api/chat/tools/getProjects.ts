@@ -8,6 +8,6 @@ export const getProjects = tool({
     "Dieses Tool zeigt eine Liste aller Projekte von David",
   parameters: z.object({}),
   execute: async () => {
-    return "Hier findest du alle meine Projekte (oben)! Frag gern nach Details!";
+    return "Hier findest du alle meine Projekte (oben)! Frag gern nach Details oder kontaktiere mich diesbezüglich per Mail oder LinkedIn!";
   },
 });
