@@ -1,6 +1,9 @@
 'use client';
 
 import FluidCursor from '@/components/FluidCursor';
+import Footer from '@/components/hefo/footer';
+import HomeHeader from '@/components/hefo/home-header';
+import HomeIntro from '@/components/home/home-intro';
 import { Button } from '@/components/ui/button';
 import { GithubButton } from '@/components/ui/github-button';
 import { motion } from 'framer-motion';
@@ -127,71 +130,13 @@ export default function HomePage() {
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
-      {/* big blurred footer word */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
-        <div
-          className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
-          style={{ marginBottom: '-2.5rem' }}
-        >
-          David Luff
-        </div>
-      </div>
 
-      {/* Container für die beiden Buttons */}
-      {!isMobile && (
-        <div className="absolute top-6 left-0 right-0 z-20 flex justify-between px-4 sm:px-8">
-          {/* GitHub Button rechts */}
-          
-          <button
-  onClick={() => goToChat('Suchen Sie nach einem Talent?')}
-  className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition-transform duration-200 hover:bg-white/60 focus:scale-110 hover:scale-105 dark:border-white dark:text-white dark:hover:bg-neutral-800"
->
-  {/* Green pulse dot */}
-  <span className="relative flex h-2 w-2">
-    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-  </span>
-  Suchen Sie nach einem Talent?
-</button>
-          <GithubButton
-            animationDuration={1.5}
-            label=""
-            size={'sm'}
-            repoUrl="https://github.com/luffdavid"
-          />
-        </div>
-      )}
+   <HomeHeader isMobile={isMobile} goToChat={goToChat} />
 
       <div className="z-10 mt-4 w-full max-w-7xl px-2 md:px-4">
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:gap-16">
-          {/* left: memoji + name + intro */}
-          <div className="flex flex-col items-center justify-center gap-4 md:items-start">
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-56 w-52 sm:h-80 sm:w-80">
-                <img
-                  src="/david-rounded.png"
-                  alt="Hero Memojis"
-                  className="h-full w-full object-cover rounded-full"
-                />
-              </div>
-              <h2 className="mt-4 text-2xl font-semibold">David Luff</h2>
-              <div className="mt-2 flex gap-4 text-muted-foreground">
-                <a href="https://github.com/luffdavid" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-5 w-5 hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="mailto:kontakt@davidluff.de">
-                  <Mail className="h-5 w-5 hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="https://www.linkedin.com/in/david-luff-228985223/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5 hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-              <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-              Ich bin 22 Jahre alt und studiere aktuell Wirtschaftsinformatik (Abschluss Bachelor im Februar 2026)
-              und bin begeisteter Softwareentwickler.
-              </p>
-            </div>
-          </div>
+            {/* left side on desktop*/}
+          <HomeIntro />
 
           {/* right: input */}
           <motion.div
@@ -269,7 +214,8 @@ export default function HomePage() {
           </motion.div>
         </div>
       </div>
-  {/*     <FluidCursor /> */}
+      <FluidCursor />
+  <Footer />
     </div>
   );
 }
