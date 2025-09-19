@@ -59,7 +59,6 @@ export function SimplifiedChatView({
     ) || false;
   const hasTools = currentTool.length > 0;
 
-  console.log('currentTool', currentTool);
 
   return (
     <motion.div {...MOTION_CONFIG} className="flex h-full w-full flex-col px-4">
