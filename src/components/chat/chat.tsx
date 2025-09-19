@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { toast } from 'sonner';
 
 // Component imports
@@ -123,6 +124,10 @@ const Chat = () => {
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [isTalking, setIsTalking] = useState(false);
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const {
     messages,
@@ -287,11 +292,13 @@ const Chat = () => {
       <div
         className="fixed top-0 right-0 left-0 z-50"
         style={{
-          background:
-            'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)',
+          background: mounted && theme === 'dark'
+            ? 'linear-gradient(to bottom, rgba(23,23,23,1) 0%, rgba(23,23,23,0.95) 30%, rgba(23,23,23,0.8) 50%, rgba(23,23,23,0) 100%)'
+            : 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 30%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%)',
         }}
+        data-theme-gradient
       >
-        <a href="/" className="absolute left-4 top-6 flex items-center text-gray-600 hover:text-black">
+        <a href="/" className="absolute left-4 top-6 flex items-center text-gray-600 hover:text-black dark:text-neutral-300 dark:hover:text-white">
           <ArrowLeft />
         </a>
         <div
@@ -371,7 +378,7 @@ const Chat = () => {
         </div>
 
         {/* Fixed Bottom Bar */}
-        <div className="sticky bottom-0 bg-white px-2 pt-3 md:px-0 md:pb-4">
+        <div className="sticky bottom-0 bg-white px-2 pt-3 md:px-0 md:pb-4 dark:bg-neutral-900/60">
           <div className="relative flex flex-col items-center gap-3">
             <HelperBoost submitQuery={submitQuery} setInput={setInput} />
             <ChatBottombar

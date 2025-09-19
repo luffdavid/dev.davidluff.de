@@ -3,8 +3,6 @@ const useFluidCursor = () => {
   const canvas = document.getElementById('fluid');
   resizeCanvas();
 
-  //try to adjust settings
-
   let config = {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1440,

@@ -1,4 +1,5 @@
 import { GithubIcon, Star } from "lucide-react";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 interface HomeHeaderProps {
     isMobile: boolean;
@@ -9,7 +10,7 @@ export default function HomeHeader({ isMobile, goToChat }: HomeHeaderProps) {
     if (isMobile) return null; // Für mobile nichts anzeigen
 
     return (
-        <div className="absolute top-6 left-0 right-0 z-20 flex justify-between px-4 sm:px-8">
+        <div className="absolute top-6 left-0 right-0 z-20 flex items-center justify-between px-4 sm:px-8 gap-3">
             {/* Lebenslauf & Jobkarte Button */}
             <button
                 onClick={() => goToChat('Lebenslauf und Jobkarte anzeigen')}
@@ -23,8 +24,10 @@ export default function HomeHeader({ isMobile, goToChat }: HomeHeaderProps) {
                 <span>Lebenslauf & Jobkarte</span>
             </button>
 
-            {/* GitHub Button */}
-            <a
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              {/* GitHub Button */}
+              <a
                 href="https://github.com/luffdavid"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -36,7 +39,8 @@ export default function HomeHeader({ isMobile, goToChat }: HomeHeaderProps) {
           aria-hidden="true"
         />
                 <span>Zu meinem GitHub Profil</span>
-            </a>
+              </a>
+            </div>
         </div>
     );
 }
