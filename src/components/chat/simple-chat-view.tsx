@@ -53,7 +53,10 @@ export function SimplifiedChatView({
   // Only display the first tool (if any)
   const currentTool = toolInvocations.length > 0 ? [toolInvocations[0]] : [];
 
-  const hasTextContent = message.content.trim().length > 0;
+  const hasTextContent =
+    message.parts?.some(
+      (part) => part.type === 'text' && (part.text?.trim().length || 0) > 0
+    ) || false;
   const hasTools = currentTool.length > 0;
 
   console.log('currentTool', currentTool);
