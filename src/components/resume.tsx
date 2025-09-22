@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownToLine, Download, Eye, File } from 'lucide-react';
-import Image from 'next/image';
+import {  Download } from 'lucide-react';
 
 export function Resume() {
   // Resume details
@@ -11,7 +10,7 @@ export function Resume() {
     title: 'Lebenslauf von David',
     description: 'Softwareentwickler',
     fileType: 'PDF',
-    lastUpdated: 'August 2025',
+    lastUpdated: 'September 2025',
     fileSize: '0,5 MB',
     previewImageSrc: '/Lebenslauf-preview.png',
     downloadUrl: '/Lebenslauf.pdf',

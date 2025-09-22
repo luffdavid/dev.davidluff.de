@@ -3,7 +3,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
-import { Code, Cpu, PenTool, Users } from 'lucide-react';
+import { Code, Cpu,  Users } from 'lucide-react';
 
 const Skills = () => {
   const skillsData = [
@@ -24,8 +24,8 @@ const Skills = () => {
       category: 'Backend & Systeme',
       icon: <Cpu className="h-5 w-5" />,
       skills: [
-        'Java',
-        'Typescript',
+        'Java (Spring, Quarkus)',
+        'Typescript mit Node.js',
         'Git',
         'GitHub',
         'Docker',
@@ -37,13 +37,10 @@ const Skills = () => {
       category: 'Soft Skills',
       icon: <Users className="h-5 w-5" />,
       skills: [
-        'Communication',
-        'Problem-Solving',
-        'Adaptability',
-        'Learning Agility',
+        'Anpassbarkeit',
+        'Lernwille & -fähigkeit',
         'Teamwork',
-        'Creativity',
-        'Focus',
+        'Kreativität',
       ],
       color: 'bg-amber-50 text-amber-600 border border-amber-200',
     },
@@ -51,7 +48,7 @@ const Skills = () => {
       category: 'KI & Fullstack Engineering',
       icon: <Cpu className="h-5 w-5" />,
       skills: [
-        'LLM Providers (ChatGPT, Whisper, Groq, Mistral & Claude)',
+        'Nutzung der APIs von LLM Providers ',
         'AI Agents',
         'Prompt engineering',
         'RAG (Retrieval-Augmented Generation)',

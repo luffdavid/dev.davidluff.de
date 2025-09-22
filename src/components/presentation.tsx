@@ -10,7 +10,6 @@ export function Presentation() {
     name: 'David Luff',
     age: '22 Jahre alt',
     location: 'München, Deutschland',
-    // Add a newline character after the emoji
     description:
       "Hey 👋\nIch bin David. Ich bin Softwareentwickler und erreiche meinen Bachelorabschluss im Studiengang Wirtschaftsinformatik im Februar 2025. Aktuell arbeite ich bei MediaMarktSaturn als dualer Student.",
     src: '/profil-david.jpeg',
@@ -103,7 +102,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Softwareentwickler', 'München', 'Sport', 'Problemlöser'].map(
+            {['IT', 'Softwareentwickler', 'München', 'Fullstack', 'Web'].map(
               (tag) => (
                 <span
                   key={tag}

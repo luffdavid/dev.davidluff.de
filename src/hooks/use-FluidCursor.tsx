@@ -1,3 +1,4 @@
+/* Hook for the cursor colors */
 // @ts-nocheck
 const useFluidCursor = () => {
   const canvas = document.getElementById('fluid');

@@ -1,8 +1,6 @@
 import Image from 'next/image';
-import { Image as Img } from 'lucide-react';
 import { ChevronRight, Link } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { url } from 'inspector';
 import { PROJECT_DATA } from './project-data';
 
 

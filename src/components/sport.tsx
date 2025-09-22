@@ -29,7 +29,7 @@ const Sports = () => {
           Meine Sportlaufbahn
         </h2>
         <p className="mt-4 text-muted-foreground">
-        Seit ich denken kann spiele ich Fußball - dabei war ich schon bei verschiedenen Vereinen wie dem VfB Eichstätt, TSV Weißenburg oder SV Marienstein und nun auch in München beim SC München.
+        Seit ich denken kann spiele ich Fußball - ich war schon bei verschiedenen Vereinen wie dem VfB Eichstätt, TSV Weißenburg oder SV Marienstein und aktuell in München beim SC München.
         </p>
       </div>
       <Photos photos={sportPhotos} />

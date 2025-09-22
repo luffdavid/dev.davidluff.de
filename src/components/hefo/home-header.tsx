@@ -13,7 +13,7 @@ export default function HomeHeader({ isMobile, goToChat }: HomeHeaderProps) {
         <div className="absolute top-6 left-0 right-0 z-20 flex items-center justify-between px-4 sm:px-8 gap-3">
             {/* Lebenslauf & Jobkarte Button */}
             <button
-                onClick={() => goToChat('Lebenslauf und Jobkarte anzeigen')}
+                onClick={() => goToChat('Jobkarte anzigen')}
                 className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition-transform duration-200 hover:bg-white/60 focus:scale-110 hover:scale-105 dark:border-white dark:text-white dark:hover:bg-neutral-800"
             >
                 {/* Green pulse dot */}

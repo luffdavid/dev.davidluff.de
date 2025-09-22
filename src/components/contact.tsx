@@ -1,30 +1,11 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { contactInfo } from '@/data/contact-info';
 
 export function Contact() {
-  // Contact information
-  const contactInfo = {
-    name: 'David Luff',
-    email: 'kontakt@davidluff.de.',
-    handle: '@David.Luff',
-    socials: [
-      {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/david-luff-228985223/',
-      },
-      {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/daavid.luff',
-      },
-      {
-        name: 'Github',
-        url: 'https://github.com/luffdavid',
-      },
-    ],
-  };
+ 
 
   // Function to handle opening links
   const openLink = (url: string) => {
