@@ -1,4 +1,4 @@
-## David Luff – Interaktives Portfolio (Next.js)
+## AI Portfolio mit Next.js und OpenAI 
 
 Ein modernes, interaktives Portfolio mit Next.js 15, React 19 und Tailwind CSS 4. Enthält eine Chat-Experience mit AI-Backend (OpenAI via `ai` SDK), animierte UI-Komponenten sowie Projekt-, Skill- und Lebenslauf-Sektionen.
 
