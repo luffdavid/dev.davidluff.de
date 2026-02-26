@@ -32,7 +32,7 @@ const JobCard = () => {
               David Luff
             </h2>
             <p className="text-muted-foreground text-sm">
-              Bewerbung als Softwareentwickler
+              Bewerbung als Werkstudent
             </p>
           </div>
         </div>

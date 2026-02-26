@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import Footer from "@/components/hefo/footer";
 
 // Load Inter font for non-Apple devices
 const inter = Inter({ 
@@ -40,8 +41,9 @@ export default function RootLayout({
             {children}
           </main>
           <Toaster />
+        <Footer />
         </ThemeProvider>
-        <Analytics />
+     {/*    <Analytics /> */}
       </body>
     </html>
   );

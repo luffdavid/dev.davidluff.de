@@ -8,9 +8,9 @@ export function Resume() {
   // Resume details
   const resumeDetails = {
     title: 'Lebenslauf von David',
-    description: 'Softwareentwickler',
+    description: 'Informatiker',
     fileType: 'PDF',
-    lastUpdated: 'September 2025',
+    lastUpdated: 'Februar 2026',
     fileSize: '0,5 MB',
     previewImageSrc: '/Lebenslauf-preview.png',
     downloadUrl: '/Lebenslauf.pdf',

@@ -10,8 +10,9 @@ const FluidCursor = () => {
 
   return (
     <div className="fixed top-0 left-0 z-0">
-      <canvas id="fluid" className="h-screen w-screen" />
+      <canvas id="fluid" className="w-screen h-[90vh]" />
     </div>
   );
 };
+
 export default FluidCursor;

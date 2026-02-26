@@ -98,7 +98,7 @@ export default function HomeCta({
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-full border-none bg-transparent text-base text-neutral-800 focus:outline-none dark:text-neutral-200"
+            className="w-full border-none bg-transparent text-base text-neutral-800 focus:outline-none dark:text-neutral-200 cursor-text"
           />
           <button
             type="submit"

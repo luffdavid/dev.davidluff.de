@@ -1,7 +1,7 @@
 'use client';
 
 import FluidCursor from '@/components/FluidCursor';
-import Footer from '@/components/hefo/footer';
+import FooterBigBlurred from '@/components/hefo/footer-big-blurred';
 import HomeHeader from '@/components/hefo/home-header';
 import HomeIntro from '@/components/home/home-intro';
 import HomeCta from '@/components/home/home-cta';
@@ -94,7 +94,7 @@ export default function HomePage() {
         </div>
       </div>
       <FluidCursor />
-      <Footer />
+      <FooterBigBlurred />
     </div>
   );
 }

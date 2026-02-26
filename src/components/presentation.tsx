@@ -6,12 +6,16 @@ import React from 'react';
 
 export function Presentation() {
   // Personal information
+  const birthday = new Date(2003, 3, 9);
+  const age = new Date().getFullYear() - birthday.getFullYear();
+ 
+
   const profile = {
     name: 'David Luff',
-    age: '22 Jahre alt',
+    age: `${age} Jahre alt`,
     location: 'München, Deutschland',
     description:
-      "Hey 👋\nIch bin David. Ich bin Softwareentwickler und erreiche meinen Bachelorabschluss im Studiengang Wirtschaftsinformatik im Februar 2025. Aktuell arbeite ich bei MediaMarktSaturn als dualer Student.",
+      "Hey 👋\nIch bin David. Ich erreiche meinen Bachelorabschluss im Studiengang Wirtschaftsinformatik im Februar 2025. Aktuell arbeite ich bei MediaMarktSaturn als dualer Student. Ab April 2026 starte ich mein Masterstudium in Informatik an der LMU in München.",
     src: '/profil-david.jpeg',
     fallbackSrc:
       '',
