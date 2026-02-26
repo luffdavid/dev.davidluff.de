@@ -1,5 +1,10 @@
 import Legal from "../Legal";
 
-export default function LegalPage({ params }: { params: { slug: string } }) {
-  return <Legal slug={params.slug} />;
+export default async function LegalPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  return <Legal slug={slug} />;
 }
