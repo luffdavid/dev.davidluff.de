@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { CalendarDays, Code2, Globe } from 'lucide-react';
-
+import { person, jobSearch } from '@/data/portfolio';
 
 const JobCard = () => {
   const openMail = () => {
-    window.open('mailto:kontakt@davidluff.de', '_blank');
+    window.open(`mailto:${person.email}`, '_blank');
   };
 
   return (
@@ -22,17 +22,17 @@ const JobCard = () => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/david-rounded3.png"
-              alt="David's avatar"
+              src={person.avatar}
+              alt={`${person.name} Avatar`}
               className="h-full w-full object-cover"
             />
           </div>
           <div>
             <h2 className="text-foreground text-2xl font-semibold">
-              David Luff
+              {person.name}
             </h2>
             <p className="text-muted-foreground text-sm">
-              Bewerbung als Werkstudent
+              {jobSearch.cardTitle}
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ const JobCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Startzeitpunkt</p>
             <p className="text-muted-foreground text-sm">
-              nach Vereinbarung
+              {jobSearch.start}
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@ const JobCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Ort</p>
             <p className="text-muted-foreground text-sm">
-              Metropolregion München oder remote
+              {jobSearch.location}
             </p>
           </div>
         </div>
@@ -153,11 +153,7 @@ const JobCard = () => {
           Was ich mitbringe:
         </p>
         <p className="text-foreground text-sm">
-          Über drei Jahre Erfahrung als dualer Student bei MediaMarktSaturn, einem modernen Tech-Unternehmen,
-          in dem ich vielfältige Bereiche kennenlernen konnte – vom Webshop-Frontend über APIs
-          und Datenbanken bis hin zur Prozessoptimierung mit KI. <br />
-          An der Universität habe ich zudem zahlreiche Projekte umgesetzt, bei denen stets die
-          Verbindung von IT und wirtschaftlichem Mehrwert im Mittelpunkt stand. <br />
+          {jobSearch.intro}
         </p>
       </div>
 
@@ -165,9 +161,7 @@ const JobCard = () => {
       <div className="mt-8">
         <p className="text-foreground mb-2 text-lg font-semibold">Goal</p>
         <p className="text-foreground text-sm">
-          Ich möchte Teil eines innovativen Teams sein, das Produkte entwickelt, die wirklich einen Unterschied machen.
-          Mein Ziel ist es, schnell zu lernen, mit voller Energie beizutragen und bleibenden Eindruck zu hinterlassen.
-          Ich bin schnell, anpassungsfähig und lerne auch gerne neue Dinge. Ihr benutzt einen anderen Tech-Stack? Kein Problem, ich lerne auch was neues :)
+          {jobSearch.goal}
         </p>
       </div>
 

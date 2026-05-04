@@ -2,19 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import {  Download } from 'lucide-react';
+import { Download } from 'lucide-react';
+import { resume as resumeDetails } from '@/data/portfolio';
 
 export function Resume() {
-  // Resume details
-  const resumeDetails = {
-    title: 'Lebenslauf von David',
-    description: 'Informatiker',
-    fileType: 'PDF',
-    lastUpdated: 'April 2026',
-    fileSize: '0,5 MB',
-    previewImageSrc: '/Lebenslauf-preview.png',
-    downloadUrl: '/Lebenslauf.pdf',
-  };
 
   const handleDownload = () => {
     // Create a link element

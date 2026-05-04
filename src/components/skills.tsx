@@ -3,62 +3,22 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
-import { Code, Cpu,  Users } from 'lucide-react';
+import { Code, Cpu, Users } from 'lucide-react';
+import { skillCategories } from '@/data/portfolio';
+
+// Map category name → icon (purely presentational, stays in component)
+const categoryIcon: Record<string, React.ReactNode> = {
+  'Frontend-Entwicklung': <Code className="h-5 w-5" />,
+  'Backend & Systeme': <Cpu className="h-5 w-5" />,
+  'KI & Fullstack Engineering': <Cpu className="h-5 w-5" />,
+  'Soft Skills': <Users className="h-5 w-5" />,
+};
 
 const Skills = () => {
-  const skillsData = [
-    {
-      category: 'Frontend-Entwicklung',
-      icon: <Code className="h-5 w-5" />,
-      skills: [
-        'HTML',
-        'CSS',
-        'TypeScript und JavaScript',
-        'Next.js',
-        'React',
-      ],
-      color: 'bg-blue-50 text-blue-600 border border-blue-200',
-    },
-    {
-      category: 'Backend & Systeme',
-      icon: <Cpu className="h-5 w-5" />,
-      skills: [
-        'Python',
-        'Java (Spring, Quarkus)',
-        'Typescript mit Node.js',
-        'Git',
-        'GitHub',
-        'Docker',
-        'GCP',
-      ],
-      color: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
-    },
-    {
-      category: 'Soft Skills',
-      icon: <Users className="h-5 w-5" />,
-      skills: [
-        'Anpassbarkeit',
-        'Lernwille & -fähigkeit',
-        'Teamwork',
-        'Kreativität',
-      ],
-      color: 'bg-amber-50 text-amber-600 border border-amber-200',
-    },
-    {
-      category: 'KI & Fullstack Engineering',
-      icon: <Cpu className="h-5 w-5" />,
-      skills: [
-        'Nutzung der APIs von LLM Providers ',
-        'AI Agents',
-        'Prompt engineering',
-        'RAG (Retrieval-Augmented Generation)',
-        'Tool routing & calling',
-        'Explainable AI',
-        'Reinforcement Learning'
-      ],
-      color: 'bg-purple-50 text-purple-600 border border-purple-200',
-    },
-  ];
+  const skillsData = skillCategories.map((cat) => ({
+    ...cat,
+    icon: categoryIcon[cat.category] ?? <Code className="h-5 w-5" />,
+  }));
 
   // Animation variants
   const containerVariants = {

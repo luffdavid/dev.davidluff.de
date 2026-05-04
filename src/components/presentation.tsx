@@ -3,22 +3,18 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
+import { person, getAge } from '@/data/portfolio';
 
 export function Presentation() {
-  // Personal information
-  const birthday = new Date(2003, 3, 9);
-  const age = new Date().getFullYear() - birthday.getFullYear();
- 
+  const age = getAge(person.birthday);
 
   const profile = {
-    name: 'David Luff',
+    name: person.name,
     age: `${age} Jahre alt`,
-    location: 'München, Deutschland',
-    description:
-      "Hey 👋\nIch bin David. Ich habe meinen Bachelor of Science im Studiengang Wirtschaftsinformatik im Februar 2025 mit der Note 1,4 abgeschlossen. Seit April 2026 bin ich im Masterstudium Informatik mit Schwerpunkt Künstlicher Intelligenz an der LMU in München. Nebenbei arbeite ich als Werkstudent bei MediamarktSaturn Technology im Bereich Softwareentwicklung.",
-    src: '/profil-david.jpeg',
-    fallbackSrc:
-      '',
+    location: person.location,
+    description: person.bio,
+    src: person.photo,
+    fallbackSrc: '',
   };
 
   // Animation variants for text elements

@@ -1,6 +1,2 @@
-export const placeholders = [
-    "Frag irgendwas über mich…",
-    "Zeig mir deine wichtigsten beruflichen Stationen…",
-    "Wie kann ich Dich kontaktieren?",
-    "Was sind deine Skills?",
-  ];
+// Re-Export aus portfolio.ts – hier nichts mehr direkt ändern!
+export { chatPlaceholders as placeholders } from './portfolio';

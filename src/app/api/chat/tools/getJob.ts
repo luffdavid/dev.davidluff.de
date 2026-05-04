@@ -1,5 +1,6 @@
 import { tool } from 'ai';
 import { z } from 'zod';
+import { person, jobSearch } from '@/data/portfolio';
 
 export const getJob = tool({
   description:
@@ -8,17 +9,15 @@ export const getJob = tool({
   execute: async () => {
     return `Das suche ich 👇
 
-- 📅 **Start**: ab Februar/März 2026
-- 🌍 **Ort**: bevorzugt **München** oder auch remote
-- 🧑‍💻 **Fokus**: Full-Stack Webentwicklung / Frontend-Entwicklung / Backend-Entwicklung, KI-Agents
-- 🛠️ **Stack**: Java, JavaScript, TypeScript, HTML, CSS, React/Next.js, Quarkus, Spring Boot und vieles mehr
+- 📅 **Start**: ${jobSearch.start}
+- 🌍 **Ort**: bevorzugt **${jobSearch.location}**
+- 🧑‍💻 **Fokus**: ${jobSearch.focus.join(' / ')}
 - 🔥 Schnell in der Umsetzung, noch schneller im Lernen, extrem hungrig auf große Herausforderungen
 
 📬 **Kontakt**:
-- E-Mail: kontakt@davidluff.de
-- LinkedIn: https://www.linkedin.com/in/david-luff-228985223/
-- GitHub: https://github.com/luffdavid
-
+- E-Mail: ${person.email}
+- LinkedIn: ${person.socials.linkedin}
+- GitHub: ${person.socials.github}
     `;
   },
 });
