@@ -2,19 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import {  Download } from 'lucide-react';
+import { Download } from 'lucide-react';
+import { resume as resumeDetails } from '@/data/portfolio';
 
 export function Resume() {
-  // Resume details
-  const resumeDetails = {
-    title: 'Lebenslauf von David',
-    description: 'Informatiker',
-    fileType: 'PDF',
-    lastUpdated: 'Februar 2026',
-    fileSize: '0,5 MB',
-    previewImageSrc: '/Lebenslauf-preview.png',
-    downloadUrl: '/Lebenslauf.pdf',
-  };
 
   const handleDownload = () => {
     // Create a link element
@@ -33,7 +24,7 @@ export function Resume() {
         className="group relative cursor-pointer overflow-hidden rounded-xl bg-accent p-0 transition-all duration-300"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.0, ease: 'easeOut' }}
+        transition={{ duration: 0.0, ease: 'easeOut' as const }}
         whileHover={{ scale: 1.01 }}
       >
         {/* Details area (bottom part) */}

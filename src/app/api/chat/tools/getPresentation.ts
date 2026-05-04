@@ -1,31 +1,16 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-
-// Funktion für genaues Alter
-function getAge(birthdate: Date): number {
-  const today = new Date();
-  let age = today.getFullYear() - birthdate.getFullYear();
-  const hasHadBirthday =
-    today.getMonth() > birthdate.getMonth() ||
-    (today.getMonth() === birthdate.getMonth() &&
-      today.getDate() >= birthdate.getDate());
-
-  if (!hasHadBirthday) {
-    age--;
-  }
-  return age;
-}
+import { person, education, getAge } from '@/data/portfolio';
 
 export const getPresentation = tool({
   description:
     'Dieses Tool liefert eine kurze persönliche Vorstellung von David Luff. Nutze es für Fragen wie "Wer bist du?" oder "Erzähl mir etwas über dich".',
   parameters: z.object({}),
   execute: async () => {
-    const age = getAge(new Date(2003, 3, 9)); 
+    const age = getAge(person.birthday);
+    const latestEdu = education[0];
     return {
-      presentation: `Ich bin David Luff, ${age} Jahre alt und lebe in München. 
-Aktuell mache ich ein duales Studium bei MediaMarktSaturn. 
-Ich liebe Softwareentwicklung, KI, Tech und funktionierende Produkte mit Mehrwert.`
+      presentation: `Ich bin ${person.name}, ${age} Jahre alt und lebe in ${person.location}.\n${latestEdu.degree} (${latestEdu.school}, ${latestEdu.year}).\nIch liebe Softwareentwicklung, KI, Tech und funktionierende Produkte mit Mehrwert.`,
     };
   },
 });
