@@ -13,8 +13,7 @@ const Skills = () => {
       skills: [
         'HTML',
         'CSS',
-        'JavaScript/TypeScript',
-        'Tailwind CSS',
+        'TypeScript und JavaScript',
         'Next.js',
         'React',
       ],
@@ -24,6 +23,7 @@ const Skills = () => {
       category: 'Backend & Systeme',
       icon: <Cpu className="h-5 w-5" />,
       skills: [
+        'Python',
         'Java (Spring, Quarkus)',
         'Typescript mit Node.js',
         'Git',
@@ -53,6 +53,8 @@ const Skills = () => {
         'Prompt engineering',
         'RAG (Retrieval-Augmented Generation)',
         'Tool routing & calling',
+        'Explainable AI',
+        'Reinforcement Learning'
       ],
       color: 'bg-purple-50 text-purple-600 border border-purple-200',
     },
@@ -74,7 +76,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] },
+      transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] as const },
     },
   };
 
@@ -83,7 +85,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.3, ease: 'easeOut' },
+      transition: { duration: 0.3, ease: 'easeOut' as const },
     },
   };
 
@@ -91,7 +93,7 @@ const Skills = () => {
     <motion.div
       initial={{ scale: 0.98, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] as const }}
       className="mx-auto w-full max-w-5xl rounded-4xl"
     >
       <Card className="w-full border-none px-0 pb-12 shadow-none">

@@ -22,7 +22,7 @@ const JobCard = () => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/david-rounded.png"
+              src="/david-rounded3.png"
               alt="David's avatar"
               className="h-full w-full object-cover"
             />
@@ -56,7 +56,7 @@ const JobCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Startzeitpunkt</p>
             <p className="text-muted-foreground text-sm">
-              nach Vereinbarung (Bachelorabschluss Februar 2026)
+              nach Vereinbarung
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ const JobCard = () => {
                     <i className="devicon-java-plain text-red-500 text-lg"></i> Java
                   </span>
                   <span className="flex items-center gap-1 rounded-md bg-zinc-800 px-2 py-1 text-xs text-white">
-                    <i className="devicon-quarkus-plain text-blue-500 text-lg"></i> Quarkus
+                    <i className="devicon-python-plain text-blue-500 text-lg"></i> Python
                   </span>
                   <span className="flex items-center gap-1 rounded-md bg-zinc-800 px-2 py-1 text-xs text-white">
                     <i className="devicon-spring-original text-green-500 text-lg"></i> Spring Boot

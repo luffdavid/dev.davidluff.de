@@ -15,7 +15,7 @@ export function Presentation() {
     age: `${age} Jahre alt`,
     location: 'München, Deutschland',
     description:
-      "Hey 👋\nIch bin David. Ich erreiche meinen Bachelorabschluss im Studiengang Wirtschaftsinformatik im Februar 2025. Aktuell arbeite ich bei MediaMarktSaturn als dualer Student. Ab April 2026 starte ich mein Masterstudium in Informatik an der LMU in München.",
+      "Hey 👋\nIch bin David. Ich habe meinen Bachelor of Science im Studiengang Wirtschaftsinformatik im Februar 2025 mit der Note 1,4 abgeschlossen. Seit April 2026 bin ich im Masterstudium Informatik mit Schwerpunkt Künstlicher Intelligenz an der LMU in München. Nebenbei arbeite ich als Werkstudent bei MediamarktSaturn Technology im Bereich Softwareentwicklung.",
     src: '/profil-david.jpeg',
     fallbackSrc:
       '',
@@ -27,7 +27,7 @@ export function Presentation() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: 'easeOut' as const },
     },
   };
 
@@ -39,7 +39,7 @@ export function Presentation() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: 'easeOut' as const,
         delay: 0.2,
       },
     },
@@ -54,7 +54,7 @@ export function Presentation() {
             <motion.div
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] as const }}
               className="h-full w-full"
             >
               <Image

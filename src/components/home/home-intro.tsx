@@ -8,7 +8,7 @@ export default function HomeIntro() {
             <div className="flex flex-col items-center text-center">
               <div className="relative h-56 w-52 sm:h-80 sm:w-80">
                 <img
-                  src="/david-rounded.png"
+                  src="/david-rounded3.png"
                   alt="Hero Memojis"
                   className="h-full w-full object-cover rounded-full"
                 />
@@ -26,8 +26,7 @@ export default function HomeIntro() {
                 </a>
               </div>
               <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-              Ich bin 22 Jahre alt und studiere aktuell Wirtschaftsinformatik (Abschluss Bachelor im Februar 2026)
-              und bin begeisteter Softwareentwickler.
+              Ich bin 23 Jahre alt und studiere aktuell Informatik mit Schwerpunkt Künstliche Intelligenz an der Ludwig-Maximilians-Universität München.
               </p>
             </div>
           </div></>

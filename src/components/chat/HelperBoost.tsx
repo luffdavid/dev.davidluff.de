@@ -119,7 +119,7 @@ const AnimatedChevron = () => {
       }}
       transition={{
         duration: 1.5,
-        ease: 'easeInOut',
+        ease: 'easeInOut' as const,
         repeat: Infinity,
         repeatType: 'loop',
       }}
@@ -346,7 +346,7 @@ function QuestionItem({ question, onClick, isSpecial }: QuestionItemProps) {
       <motion.div
         animate={{ x: isHovered ? 4 : 0 }}
         transition={{
-          type: 'spring',
+          type: 'spring' as const,
           stiffness: 400,
           damping: 25,
         }}
